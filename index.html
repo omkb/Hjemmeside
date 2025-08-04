@@ -156,8 +156,54 @@
   <section>
     <div class="card" onclick="alert('')">
       <h2><span class="emoji">📍</span>Hvor er jeg fra?</h2>
-      <p>...</p>
+      <p></p>
+      <div class="video-container">
+        <video id="mapVideo" controls width="100%">
+          <source src="kort.mp4" type="video/mp4">
+          Din browser understøtter ikke HTML5 video.
+        </video>
+      </div>
+    
     </div>
+  
+    <style>
+      .video-container {
+        margin-top: 15px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      
+      #location-card {
+        cursor: default;
+      }
+      
+      .video-control-btn {
+        margin-top: 10px;
+        padding: 8px 16px;
+        background: #4874d3;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      
+      .video-control-btn:hover {
+        background: #3863b8;
+      }
+    </style>
+    
+    <script>
+      function toggleMapVideo() {
+        const video = document.getElementById('mapVideo');
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    </script>
 
     <div class="card">
       <h2><span class="emoji">🎯</span>Hvad gør mig glad?</h2>
