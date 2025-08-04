@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oskars Kollegieansøgning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(to bottom, #e0f7fa, #fff);
+      color: #333;
+      position: relative;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Parallax bjerglag baggrund */
+    .mountain-layer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background-repeat: repeat-x;
+      z-index: -1;
+      transform: translateZ(0);
+    }
+    
+    /* Mountain 3 (bagest og højest oppe) */
+    .mountain3 {
+      top: 10%;
+      height: 27%;
+      background-image: url('https://i.imgur.com/kMxX3BM.png');
+      background-size: auto 100%;
+      animation: moveMountains 120s linear infinite;
+      opacity: 0.6;
+    }
+    
+    /* Mountain 2 (mellemlag) */
+    .mountain2 {
+      top: 40%;
+      height: 27%;
+      background-image: url('https://i.imgur.com/XsH51dA.png');
+      background-size: auto 100%;
+      animation: moveMountains 80s linear infinite reverse;
+      opacity: 0.7;
+    }
+    
+    /* Mountain 1 (forrest og nederst) */
+    .mountain1 {
+      top: 70%;
+      height: 27%;
+      background-image: url('https://i.imgur.com/hUZrRec.png');
+      background-size: auto 100%;
+      animation: moveMountains 60s linear infinite;
+      opacity: 0.8;
+    }
+    
+    @keyframes moveMountains {
+      0% { background-position: 0 0; }
+      100% { background-position: 3000px 0; }
+    }
+    
+    /* Sørg for at indholdet har en højere z-index end baggrunden */
+    header, section, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      background: #00bcd4;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .emoji {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+    .card {
+      background: #fefefe;
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, background 0.3s;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: scale(1.02);
+      background: #f1f8e9;
+    }
+    .timeline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .timeline div {
+      background: #ffe082;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      flex: 1 1 200px;
+      text-align: center;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .timeline div:hover {
+      background: #ffd54f;
+      transform: translateY(-3px);
+    }
+    footer {
+      background: #00acc1;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+    .fun-fact {
+      background: #e1bee7;
+      border-left: 6px solid #8e24aa;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 6px;
+      transition: transform 0.2s;
+    }
+    .fun-fact:hover {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+  <div class="mountain-layer mountain3"></div>
+  <div class="mountain-layer mountain2"></div>
+  <div class="mountain-layer mountain1"></div>
+
+  <header>
+    <h1>Hej! Jeg er Oskar 👋</h1>
+    <p>Et mix af bjergbestiger, datalog og kollegiedrømmer</p>
+  </header>
+
+  <section>
+    <div class="card" onclick="alert('Jeg har boet i Aarhus, Odense, Barcelona og nu København!')">
+      <h2><span class="emoji">📍</span>Hvor er jeg fra?</h2>
+      <p>...</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="emoji">🎯</span>Hvad gør mig glad?</h2>
+      <div class="timeline">
+        <div title="En frisk morgentur med kaffe i hånden">🌳 Natur</div>
+        <div title="Gerne lidt fantasy eller samfundsanalyse">📖 En god bog</div>
+        <div title="Alt fra klimadebat til eksistenskrise">🗣️ Spændende samtaler</div>
+        <div title="Deles bedst med kollegievenner">🍷 Et glas vin</div>
+        <div title="Jo dummere jeg danser, jo sjovere er det">🕺 En fjollet dans</div>
+      </div>
+    </div>
+
+    <div class="card" onclick="alert('Fun fact: Jeg mødte folk fra 30 lande på CERN – og vi lavede mad sammen mindst 4 gange om ugen.')">
+      <h2><span class="emoji">🏡</span>Hvorfor kollegie?</h2>
+      <p>...</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="emoji">🙋‍♂️</span>Hvad får I med mig?</h2>
+      <ul>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+      </ul>
+    </div>
+
+    <div class="fun-fact">
+      <strong>Fun fact:</strong> ...
+    </div>
+  </section>
+
+  <footer>
+    <p>Tak fordi I læste med – måske ses vi over opvasken eller på dansegulvet 💃🕺</p>
+  </footer>
+</body>
+</html>
