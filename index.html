@@ -69,7 +69,7 @@
     }
 
     header {
-      background: #00bcd4;
+      background: #4874d3;
       color: white;
       padding: 2rem;
       text-align: center;
@@ -124,7 +124,7 @@
       transform: translateY(-3px);
     }
     footer {
-      background: #00acc1;
+      background: #4874d3;
       color: white;
       text-align: center;
       padding: 1rem;
@@ -154,7 +154,7 @@
   </header>
 
   <section>
-    <div class="card" onclick="alert('')">
+    <div class="card" onclick="alert('Jeg har boet i Aarhus, Odense, Barcelona og nu København!')">
       <h2><span class="emoji">📍</span>Hvor er jeg fra?</h2>
       <p>...</p>
     </div>
@@ -162,81 +162,78 @@
     <div class="card">
       <h2><span class="emoji">🎯</span>Hvad gør mig glad?</h2>
       <div class="timeline">
-        <div title="En løbetur med flot udsigt, vind i håret og rockstar-briller på">🌳 Natur og motion</div>
+        <div title="En løbetur med flot udsigt, vind i håret og rockstar-briller på">🌳 Natur</div>
         <div title="Tegneserier kan faktisk noget">📖 En god bog eller manga</div>
         <div title="Jeg vil hellere høre om dit sidste mareridt, end dine aftensmad-overvejelser">🗣️ Spændende samtaler</div>
         <div title="Helst rødvin faktisk og gerne nok til at man betroer sig hiandens dybeste hemmeligheder">🍷 Et glas vin</div>
-        <div title="Jo dummere og mere afslappet, jo sjovere" onclick="showDanceVideo()">🕺 En fjollet dans (tryk på mig)</div>
-
-        <div id="videoModal" class="modal">
-          <div class="modal-content">
-            <span class="close-button" onclick="closeVideo()">&times;</span>
-            <video id="danceVideo" controls width="100%">
-              <source src="dans.webm" type="video/mp4">
-              Din browser understøtter ikke HTML5 video.
-            </video>
-          </div>
-        </div>
-        
-        <script>
-          function showDanceVideo() {
-            document.getElementById('videoModal').style.display = 'flex';
-            document.getElementById('danceVideo').play();
-          }
-          
-          function closeVideo() {
-            document.getElementById('videoModal').style.display = 'none';
-            document.getElementById('danceVideo').pause();
-            document.getElementById('danceVideo').currentTime = 0;
-          }
-        
-          // Luk modal hvis der klikkes udenfor videoen
-          window.onclick = function(event) {
-            const modal = document.getElementById('videoModal');
-            if (event.target == modal) {
-              closeVideo();
-            }
-          }
-        </script>
-        
-        <style>
-          .modal {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 55%;
-            height: 55%;
-            background-color: rgba(0,0,0,0.8);
-            z-index: 100;
-            justify-content: center;
-            align-items: center;
-          }
-          
-          .modal-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 12px;
-            width: 80%;
-            max-width: 800px;
-            position: absolute;
-          }
-          
-          .close-button {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 44px;
-            cursor: pointer;
-            color: #e0d9da;
-          }
-          
-          .close-button:hover {
-            color: #888;
-          }
-        </style>
+        <div title="Jo dummere og mere afslappet, jo sjovere" onclick="showDanceVideo()">🕺 En fjollet dans</div>
       </div>
     </div>
+
+    <div id="videoModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeVideo()">&times;</span>
+        <video id="danceVideo" controls width="100%">
+          <source src="dans.webm" type="video/mp4">
+          Din browser understøtter ikke HTML5 video.
+        </video>
+      </div>
+    </div>
+    
+    <script>
+      function showDanceVideo() {
+        document.getElementById('videoModal').style.display = 'flex';
+        document.getElementById('danceVideo').play();
+      }
+      
+      function closeVideo() {
+        document.getElementById('videoModal').style.display = 'none';
+        document.getElementById('danceVideo').pause();
+        document.getElementById('danceVideo').currentTime = 0;
+      }
+    
+      // Luk modal hvis der klikkes udenfor videoen
+      window.onclick = function(event) {
+        const modal = document.getElementById('videoModal');
+        if (event.target == modal) {
+          closeVideo();
+        }
+      }
+    </script>
+    
+    <style>
+      .modal {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 55%;
+        height: 55%;
+        background-color: transparent;
+      }
+      
+      .modal-content {
+        background-color: rgb(233, 87, 233);
+        padding: 6px;
+        border-radius: 12px;
+        width: 80%;
+        max-width: 800px;
+        position: absolute;
+      }
+      
+      .close-button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 44px;
+        cursor: pointer;
+        color: #f0e5e8;
+      }
+      
+      .close-button:hover {
+        color: #383737;
+      }
+    </style>
 
     <div class="card" onclick="alert('...')">
       <h2><span class="emoji">🏡</span>Hvorfor kollegie?</h2>
